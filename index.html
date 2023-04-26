@@ -467,22 +467,19 @@
     }); 
   </script>
 
-  <script>
-
-    setTimeout(() => {
-      document.getElementById("simpleslides").style.visibility = "visible";
-    }, 500);
-
-  </script>
-
-
 </head>
 
 <!-- The one parent element must have an ID of #simpleslides -->
 
 <body>
-
-  <div id="simpleslides" style="visibility: hidden;">
+    <div id="loadingslide" style="visibility: visible; height: 100%; width: 100%;">
+      <div class="midcenter">
+              <h1>LOADING...</h1>
+      </div>
+   </div>
+ 
+  
+  <div id="simpleslides" style="visibility: hidden">
     <div class="FrontSlide">
 
 
@@ -4523,7 +4520,7 @@
     <div id="AardwarmteP50Vermogen" class="slide">
       <div class="container">
         <div class="row">
-          <h2> P50 Vermogen van één Aardwarmte-doublet uit Reservoirs (1.5-4.5 km diepte)</h2>
+          <h2> P50 Vermogen van ï¿½ï¿½n Aardwarmte-doublet uit Reservoirs (1.5-4.5 km diepte)</h2>
         </div>
         <div class="row">
           <div class="col">
@@ -7623,6 +7620,8 @@
     <script>
       $(window).load(function () {
         $('#loading').hide();
+        document.getElementById("simpleslides").style.visibility = "visible";
+        document.getElementById("loadingslide").style.visibility = "hidden";
       });
     </script>
 
