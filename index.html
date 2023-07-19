@@ -7617,6 +7617,303 @@
       </div>
     </div>
 
+    <div class="FrontSlide">
+      <div style="height: 100%; width: 100%">
+        <div class="h-100 row">
+          <div class="col">
+            <div id="logo" class="topcenter">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Logo_rijksoverheid.svg/220px-Logo_rijksoverheid.svg.png"
+                alt="Rijksdienst voor Ondernemend Nederland" style="float:top" height="70px">
+            </div>
+            <div class="midcenter">
+              <h1>Informatie over de <br>
+                  Transitie Visie Warmte plannen van gemeenten</h1>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="TransitieVisieWarmte" class="slide">
+      <div class="container">
+        <div class="row">
+          <h2>TransitieVisieWarmte</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!--img
+							src="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wms?SERVICE=WMS?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TransitieVisieWarmte&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+						style="float:left"-->
+            <div id="TVW_map" style="height:600px;width:500px">
+              <script>
+                var TVW_map = L.map('TVW_map').setView([52.00, 5.30], 8);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '© <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                  maxZoom: 18
+                }).addTo(TVW_map);
+                L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/TransitieVisieWarmte/wms?', {
+                  format: 'image/png',
+                  crs: L.CRS.EPSG4326,
+                  opacity: 0.69,
+                  layers: 'TransitieVisieWarmte',
+                  minZoom: 6, maxZoom: 18,
+                  attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> © <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+                }).addTo(TVW_map);
+              </script>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item"
+                  href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/418d6ddc-806a-4d5f-835e-3d430a7a84ee?tab=general">metaData</a>
+                <a class="dropdown-item" href="https://rvo-nl.github.io/EnergieWiki/#TransitieVisieWarmte">beschrijving</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Download<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=GML3">GML3</a>
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=GML2">GML2</a>
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=application/json">geoJson</a>
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=KML">KML</a>
+                <a class="dropdown-item"
+                  href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=getFeature&typeName=TransitieVisieWarmte&outputformat=CSV">WKT-CSV</a>
+                <!--a class="dropdown-item"
+                             href="https://rvo.b3p.nl/geoserver/TransitieVisieWarmte/wfs?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TransitieVisieWarmte&format=image/svg">SVG</a-->
+              </div>
+            </div>
+            <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+              data-target="#TransitieVisieWarmte_Attributen">Attributen</button>
+          </div>
+
+          <div class="col">
+            <p> <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/TransitieVisieWarmte/wms? <br>
+              <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/TransitieVisieWarmte/wfs? <br>
+              <b>Laagnaam: </b>TransitieVisieWarmte<br>
+              <b>Bron: </b><a href="www.RVO.nl"> RVO</a> <br><br>
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                  style="background: transparent" />
+              </a> <br />
+            </p>
+            <p> <b>Legende:</b> <br>
+              <img
+                src="https://www.warmteatlas.nl/geoserver/TransitieVisieWarmte/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=TransitieVisieWarmte"
+                style="float:bottom" />
+            </p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table id="TransitieVisieWarmte_Attributen" class="collapse table table-striped table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>Attribuut</th>
+                  <th>Waarde</th>
+                  <th>Eenheid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>gm_code</td>
+                  <td>[gm_code]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>gm_naam</td>
+                  <td>[gm_naam]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>gm_doel</td>
+                  <td>[gm_doel]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>doc_code</td>
+                  <td>[doc_code]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>tvw_naam</td>
+                  <td>[tvw_naam]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>doc_datum</td>
+                  <td>[doc_datum]</td>
+                  <td>date</td>
+                </tr>
+                <tr>
+                  <td>doc_type</td>
+                  <td>[doc_type]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>doc_status</td>
+                  <td>[doc_status]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>doc_voorwaarde</td>
+                  <td>[doc_voorwaarde]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>doc_procesdoel</td>
+                  <td>[doc_procesdoel]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>doc_inhouddoel</td>
+                  <td>[doc_inhouddoel]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>bron</td>
+                  <td>[bron]</td>
+                  <td>url</td>
+                </tr>
+                <tr>
+                  <td>pln_code</td>
+                  <td>[pln_code]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pln_naam</td>
+                  <td>[pln_naam]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>plansoort</td>
+                  <td>[plansoort]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>startjaar</td>
+                  <td>[startjaar]</td>
+                  <td>date</td>
+                </tr>
+                <tr>
+                  <td>eindjaar</td>
+                  <td>[eindjaar]</td>
+                  <td>date</td>
+                </tr>
+                <tr>
+                  <td>planstatus</td>
+                  <td>[planstatus]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>planstatus_klasse</td>
+                  <td>[planstatus_klasse]</td>
+                  <td>classificatie</td>
+                </tr>
+                <tr>
+                  <td>planstatus_code</td>
+                  <td>[planstatus_code]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>techniekstatus</td>
+                  <td>[techniekstatus]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>techniekstatus_klasse</td>
+                  <td>[techniekstatus_klasse]</td>
+                  <td>classificatie</td>
+                </tr>
+                <tr>
+                  <td>techniekstatus_code</td>
+                  <td>[techniekstatus_code]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>pln_voorwaarde</td>
+                  <td>[pln_voorwaarde]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pln_doel</td>
+                  <td>[pln_doel]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>isolatiegraad</td>
+                  <td>[isolatiegraad]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>isolatiegraad_klasse</td>
+                  <td>[isolatiegraad_klasse]</td>
+                  <td>classificatie</td>
+                </tr>
+                <tr>
+                  <td>isolatiegraad_code</td>
+                  <td>[isolatiegraad_code]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>installatie</td>
+                  <td>[installatie]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>installatie_klasse</td>
+                  <td>[installatie_klasse]</td>
+                  <td>classificatie</td>
+                </tr>
+                <tr>
+                  <td>installatie_code</td>
+                  <td>[installatie_code]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>infrastructuur</td>
+                  <td>[infrastructuur]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>infrastructuur_klasse</td>
+                  <td>[infrastructuur_klasse]</td>
+                  <td>classificatie</td>
+                </tr>
+                <tr>
+                  <td>infrastructuur_code</td>
+                  <td>[infrastructuur_code]</td>
+                  <td>codering</td>
+                </tr>
+                <tr>
+                  <td>energiebron</td>
+                  <td>[energiebron]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>energiebron_versimpeld</td>
+                  <td>[energiebron_versimpeld]</td>
+                  <td>classificatie</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       $(window).load(function () {
         $('#loading').hide();
