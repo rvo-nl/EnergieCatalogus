@@ -1704,7 +1704,7 @@
                 <a class="dropdown-item"
                   href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=CO2emissieETSbedrijven&outputformat=CSV">WKT-CSV</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=CO2emissieETSbedrijven&format=image/svg">SVG</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=-11000,300000,280000,820000&WIDTH=500&HEIGHT=600&LAYERS=CO2emissieETSbedrijven&format=image/svg">SVG</a>
               </div>
             </div>
             <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
@@ -1744,42 +1744,52 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>CO2 emissies 2013</td>
+                  <td>CO2 emissies 2022</td>
                   <td>kton/jaar</td>
                   <td>[kton2013]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2014</td>
+                  <td>CO2 emissies 2021</td>
                   <td>kton/jaar</td>
                   <td>[kton2014]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2015</td>
+                  <td>CO2 emissies 2020</td>
                   <td>kton/jaar</td>
                   <td>[kton2015]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2016</td>
+                  <td>CO2 emissies 2019</td>
                   <td>kton/jaar</td>
                   <td>[kton2016]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2017</td>
+                  <td>CO2 emissies 2018</td>
                   <td>kton/jaar</td>
                   <td>[kton2017]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2018</td>
+                  <td>CO2 emissies 2017</td>
                   <td>kton/jaar</td>
                   <td>[kton2018]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2019</td>
+                  <td>CO2 emissies 2016</td>
                   <td>kton/jaar</td>
                   <td>[kton2019]</td>
                 </tr>
                 <tr>
-                  <td>CO2 emissies 2020</td>
+                  <td>CO2 emissies 2015</td>
+                  <td>kton/jaar</td>
+                  <td>[kton2020]</td>
+                </tr>
+                <tr>
+                  <td>CO2 emissies 2014</td>
+                  <td>kton/jaar</td>
+                  <td>[kton2020]</td>
+                </tr>
+                <tr>
+                  <td>CO2 emissies 2013</td>
                   <td>kton/jaar</td>
                   <td>[kton2020]</td>
                 </tr>
@@ -1813,8 +1823,8 @@
         <div class="row">
           <div class="col">
             <!--img
-							src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=CO2EmissieBedrijven&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
-						style="float:left"-->
+		src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=CO2EmissieBedrijven&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+			style="float:left"-->
             <div id="CO2EmissieBedrijvenMap" class="map" style="height:600px;width:500px">
               <script>
                 var CO2EmissieBedrijvenMap = L.map('CO2EmissieBedrijvenMap').setView([52.00, 5.40], 8);
@@ -2169,7 +2179,7 @@
               <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
               <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
               <b>Laagnaam:    </b> GroteStookInstallaties<br>
-              <b>Bron:        </b><a href="https://www.emissieregistratie.nl" target="_blank"> EmissieRegistratie</a>/<a href="https://www.RVO.nl" target="_blank">RVO</a>
+              <b>Bron:        </b><a href="https://www.eea.europa.eu/en/datahub/datahubitem-view/9405f714-8015-4b5b-a63c-280b82861b3d" target="_blank"> Industrial Reporting|EEA data </a>/<a href="https://www.RVO.nl" target="_blank">RVO</a>
               <br><br>
               <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                 <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
@@ -2267,12 +2277,7 @@
                 </tr>
                 <tr>
                   <td>Vollast Uren</td>
-                  <td>[VollastUur]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Sector</td>
-                  <td>[Sector]</td>
+                  <td>[VollastUr0]</td>
                   <td></td>
                 </tr>
                 <tr>
