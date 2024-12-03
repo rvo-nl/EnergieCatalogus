@@ -4126,7 +4126,8 @@
       </div>
     </div>
 
-    <div id="AquathermieOpenWater" class="slide">
+	  
+    <div id="AquathermieOpenWater" class="slide">     <!-- oude versie van tabel
 
       <div class="container">
         <div class="row">
@@ -4135,8 +4136,8 @@
         <div class="row">
           <div class="col">
             <!--img
-												src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=AquathermieOpenWater&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
-												style="float:left"-->
+		src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=AquathermieOpenWater&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+		style="float:left"-->
             <div id="AquathermieOpenWatermap" style="height:600px;width:500px">
               <script>
                 var AquathermieOpenWatermap = L.map('AquathermieOpenWatermap').setView([52.00, 5.30], 8);
@@ -4490,7 +4491,120 @@
       </div>
     </div>
 
-    <div id="AquathermieOpenWater_QuickScan" class="slide">
+
+	  
+    <div id="AquathermieOpenWater TEO_potentie" class="slide">     <!-- nieuw versie van tabel
+
+      <div class="container">
+        <div class="row">
+          <h2> Totaal potentieel Open oppervlakte water in GJ/jaar</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!--img
+		src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEO_potentie&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+		style="float:left"-->
+            <div id="TEO_potentiemap" style="height:600px;width:500px">
+              <script>
+                var TEO_potentiemap = L.map('TEO_potentiemap').setView([52.00, 5.30], 8);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                  maxZoom: 18
+                }).addTo(TEO_potentiemap);
+                L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
+                  format: 'image/png',
+                  crs: L.CRS.EPSG4326,
+                  opacity: 0.69,
+                  layers: 'TEO_potentie',
+                  minZoom: 6, maxZoom: 18,
+                  attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+                }).addTo(TEO_potentiemap);
+              </script>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item"
+                  href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/fd578651-b3cb-4994-b79a-5336c8db878e" target="_blank" target="_blank">metaData</a>
+                <a class="dropdown-item"
+                  href="https://rvo-nl.github.io/EnergieWiki/#TEO_potentie" target="_blank">beschrijving</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Download<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=GML3">GML3</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=GML2">GML2</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=application/json">geoJson</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=KML">KML</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_potentie&outputformat=CSV">WKT-CSV</a>
+                <!--a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEO_potentie&format=image/svg">SVG</a-->
+              </div>
+            </div>
+            <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+              data-target="#TEO_potentie_Attributen">Attributen</button>
+          </div>
+
+          <div class="col">
+            <p> 
+              <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
+              <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
+              <b>Laagnaam:    </b> TEO_potentie <br>
+              <b>Bron:        </b> <a href="https://unievanwaterschappen.nl/" target="_blank">UvW</a> /
+                           <a href="https://www.syntraal.nl/aquathermieviewer-de-centrale-ontsluiting-voor-regionale-data-potentie-warmte-uit-water" target="_blank">STOWA</a> /
+                           <a href="https://www.warmingup.info/resultaten?Query=&ThemaIds=3&SoortPublicatieIds=1&SoortPublicatieIds=2&SoortPublicatieIds=3&DeelnemerId=0" target="_blank">WarmingUp</a> <br><br>
+                    
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                  style="background: transparent" />
+              </a> <br />
+            </p>
+            <p> <b>Legende:</b> <br>
+              <img
+                src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=TEO_potentie"
+                style="float:bottom" />
+            </p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table id="TEO_potentie_Attributen" class="collapse table table-striped table-hover table-sm"
+              style="width:100%">
+              <thead>
+                <tr>
+                  <th>Attribuut</th>
+                  <th>Waarde</th>
+                  <th>Eenheid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>xx</td>
+                  <td>[xx]</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	  
+    <div id="TEO_quickscan" class="slide">     <!-- AquathermieOpenwater_quickscan
 
       <div class="container">
         <div class="row">
@@ -4499,23 +4613,23 @@
         <div class="row">
           <div class="col">
             <!--img
-												src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=AquathermieOpenWater_QuickScan&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
-												style="float:left"-->
-            <div id="AquathermieOpenWater_QuickScanmap" style="height:600px;width:500px">
+		src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEO_quickscan&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+			style="float:left"-->
+            <div id="TEO_quickscanmap" style="height:600px;width:500px">
               <script>
-                var AquathermieOpenWater_QuickScanmap = L.map('AquathermieOpenWater_QuickScanmap').setView([52.00, 5.30], 8);
+                var TEO_quickscanmap = L.map('TEO_quickscanmap').setView([52.00, 5.30], 8);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                   attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                   maxZoom: 18
-                }).addTo(AquathermieOpenWater_QuickScanmap);
+                }).addTo(TEO_quickscanmap);
                 L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
                   format: 'image/png',
                   crs: L.CRS.EPSG4326,
                   opacity: 0.69,
-                  layers: 'AquathermieOpenWater_QuickScan',
+                  layers: 'TEO_quickscan',
                   minZoom: 6, maxZoom: 18,
                   attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
-                }).addTo(AquathermieOpenWater_QuickScanmap);
+                }).addTo(TEO_quickscanmap);
               </script>
             </div>
 
@@ -4534,30 +4648,30 @@
                   class="caret"></span></button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=GML3">GML3</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=GML3">GML3</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=GML2">GML2</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=GML2">GML2</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=SHAPE-ZIP">SHP-ZIP</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=application/json">geoJson</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=application/json">geoJson</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=KML">KML</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=KML">KML</a>
                 <a class="dropdown-item"
-                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=AquathermieOpenWater_QuickScan&outputformat=CSV">WKT-CSV</a>
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEO_quickscan&outputformat=CSV">WKT-CSV</a>
                 <!--a class="dropdown-item"
-                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=AquathermieOpenWater_QuickScan&format=image/svg">SVG</a-->
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEO_quickscan&format=image/svg">SVG</a-->
               </div>
             </div>
             <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
-              data-target="#AquathermieOpenWater_QSAttributen">Attributen</button>
+              data-target="#TEO_quickscan_Attributen">Attributen</button>
           </div>
 
           <div class="col">
             <p>  
               <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
               <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
-              <b>Laagnaam:    </b> AquathermieOpenWater_QuickScan<br>
+              <b>Laagnaam:    </b> TEO_quickscan<br>
               <b>Bron:        </b> <a href="https://unievanwaterschappen.nl/" target="_blank">UvW</a> <br><br>
               <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                 <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
@@ -4574,177 +4688,37 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-            <table id="AquathermieOpenWater_QSAttributen" class="collapse table table-striped table-hover table-sm"
+            <table id="TEO_quickscan_QS_Attributen" class="collapse table table-striped table-hover table-sm"
               style="width:100%">
-              <thead>
-                <tr>
-                  <th>Attribuut</th>
-                  <th>Waarde</th>
-                  <th>Eenheid</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Warmtecapaciteit binnen 5km</td>
-                  <td>[wocgjy]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>Buurt code</td>
-                  <td>[bu_code]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Buurtnaam</td>
-                  <td>[bu_naam]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Wijk code</td>
-                  <td>[wk_code]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Gemeente code</td>
-                  <td>[gm_code]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Gemeentenaam</td>
-                  <td>[gm_naam]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Warmteopslagcapaciteit in de bodem</td>
-                  <td>[bu_wkogj]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>% van de warmtevraag</td>
-                  <td>[match_perc]</td>
-                  <td>&#37;</td>
-                </tr>
-                <tr>
-                  <td>Wijknaam</td>
-                  <td>[wk_naam]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>postcode</td>
-                  <td>[postcode]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>woonfunctie</td>
-                  <td>[woonfuncti]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>woon oppervlakte</td>
-                  <td>[woon_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>gezondheid oppervlakte</td>
-                  <td>[gez_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>onderwijs oppervlakte</td>
-                  <td>[onderw_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>winkel oppervlakte</td>
-                  <td>[winkel_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>sport oppervlakte</td>
-                  <td>[sport_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>kantoor oppervlakte</td>
-                  <td>[kant_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>logies oppervlakte</td>
-                  <td>[logies_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>cel oppervlakte</td>
-                  <td>[cel_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>bijeenkomst oppervlakte</td>
-                  <td>[bijeen_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>industire oppervlakte</td>
-                  <td>[indus_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>totale oppervlakte</td>
-                  <td>[tot_opp]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Warmtevraag 2020</td>
-                  <td>[wvr20]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>Warmtevraag 2050</td>
-                  <td>[wvr50]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>netto warmtevraag 2020</td>
-                  <td>[net_wvr20]</td>
-                  <td></td>
-                </tr>GJ/jaar
-                <tr>
-                  <td>wvr20_c</td>
-                  <td>[wvr20_c]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>net_wvr20_</td>
-                  <td>[net_wvr20_]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>net_wvr50</td>
-                  <td>[net_wvr50]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>wvr50_c</td>
-                  <td>[wvr50_c]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>net_wvr50_</td>
-                  <td>[net_wvr50_]</td>
-                  <td>GJ/jaar</td>
-                </tr>
-                <tr>
-                  <td>bu_kvr20</td>
-                  <td>[bu_kvr20]</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>geometrie</td>
-                  <td>[the_geom]</td>
-                  <td></td>
-                </tr>
-              </tbody>
+               <thead>
+ 		 <tr >
+		   <th>Attribuut</th>
+		   <th>Waarde</th>
+ 		  <th>Eenheid</th>
+		  </tr>
+		 </thead>
+		  <tbody>
+		   <tr >
+		    <td>Warmtevraag 2020</td>
+		    <td>[wvr20]</td>
+		    <td>GJ/jaar</td>
+		   </tr>
+		   <tr >
+		    <td>Warmtecapaciteit binnen 5km</td>
+		    <td>[wocgjy]</td>
+		    <td>GJ/jaar</td>
+		   </tr>
+		   <tr >
+		    <td>% van de warmtevraag</td>
+		    <td>[match_perc]</td>
+		    <td>&#37;</td>
+		   </tr>
+		   <tr >
+		    <td>Warmteopslagcapaciteit in de bodem</td>
+		    <td>[buwkogj]</td>
+		    <td>GJ/jaar</td>
+		   </tr> 
+	      </tbody>
             </table>
           </div>
         </div>
