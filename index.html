@@ -2480,7 +2480,7 @@
               <!--label for="cql">CQL Filter</label-->
               <label for="sql_input_IBISbedrijventerreinen">MilieuCategorie Filter:</label>
               <input class="form-control form-control-sm" type="text" id="sql_input_IBISbedrijventerreinen"
-                value="MAX_MILIEU > 4" />
+                value="MAX_MILIEU >= 4" />
               <input type="button" class="btn btn-outline-info" id="sql_submit_IBISbedrijventerreinen" value="update"
                 onclick="set_sql_IBISbedrijventerreinen()" />
               <input type="reset" class="btn btn-outline-info" value="reset"
@@ -2592,8 +2592,8 @@
         <div class="row">
           <div class="col">
             <!--img
-						src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=ProductieInstallaties&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"									
-						style="float:left"-->
+	     src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=ProductieInstallaties&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"									
+	   	 style="float:left"-->
             <div id="ProductieInstallaties_map" style="height:600px;width:500px">
               <script>
                 var ProductieInstallaties_map = L.map('ProductieInstallaties_map').setView([52.00, 4.40], 9);
@@ -2644,8 +2644,7 @@
               </div>
             </div>
             <button type="button" class="btn btn-outline-info mr-1" data-toggle="collapse"
-              data-target="#ProductieInstallaties_Attributen">Geen Attributen</button>
-
+              data-target="#ProductieInstallaties_Attributen">Attributen</button>
           </div>
 
           <div class="col">
@@ -2669,14 +2668,99 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-            <table id="ProductieInstallaties_Attributen" class="collapse table table-striped table-hover table-sm"
-              style="width:100%">
+            <table id="IBISbedrijventerreinenAttributen" class="collapse table table-striped table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>Attribuut</th>
+                  <th>Waarde</th>
+                  <th>Eenheid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PlanNaam</td>
+                  <td>[PLAN_NAAM]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>PlanFase</td>
+                  <td>[PLAN_FASE]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Bruto Oppervlakte</td>
+                  <td>[HA_BRUTO]</td>
+                  <td>ha</td>
+                </tr>
+
+                <tr>
+                  <td>Oppervlakte uitgegeven</td>
+                  <td>[HA_UITGEG]</td>
+                  <td>ha</td>
+                </tr>
+                <tr>
+                  <td>Vol (ja/nee)</td>
+                  <td>[VOL]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Uitgifte oppervlakte dit jaar</td>
+                  <td>[HA_UIT_HJR]</td>
+                  <td>ha</td>
+                </tr>
+                <tr>
+                  <td>Maximale milieucategorie</td>
+                  <td>[MAX_MILIEU]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Park management</td>
+                  <td>[PARK_MGT]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Bereikbaarheid over de weg</td>
+                  <td>[EXT_BEREIK]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ontsluiting via spoor</td>
+                  <td>[SPOOR_ONTS]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ontsluiting via water</td>
+                  <td>[WATER_ONTS]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Minimale verkoop prijs per m2</td>
+                  <td>[MN_VPRIJS]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Maximale verkoop prijs per m2</td>
+                  <td>[MX_VPRIJS]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>GemeenteNaam</td>
+                  <td>[GEM_NAMEN]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>ProvicieNaam</td>
+                  <td>[PROV_NAMEN]</td>
+                  <td></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
 
+	      
 	  
     <div id="WoonKernen" class="slide">
       <div class="container">
