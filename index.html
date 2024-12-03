@@ -4828,7 +4828,7 @@
     </div>
 
 	  
-   <div id="TEA_assets_met_wko" class="slide">     <!-- Aquathermie RWZI & .. -->
+   <div id="TEA_assets" class="slide">     <!-- Aquathermie RWZI & .. -->
 
       <div class="container">
         <div class="row">
@@ -4895,7 +4895,7 @@
             <p>  
               <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
               <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
-              <b>Laagnaam:    </b> TEA_assets_met_wko<br>
+              <b>Laagnaam:    </b> TEA_assets_met_wko  /  TEA_assets_zonder_wko<br>
               <b>Bron:        </b> <a href="https://unievanwaterschappen.nl/" target="_blank">UvW</a> <br><br>
                                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                 <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
@@ -4922,26 +4922,61 @@
 		  </tr>
 		 </thead>
 		  <tbody>
-		   <tr >
-		    <td> </td>
-		    <td>[]</td>
-		    <td>GJ/jaar</td>
-		   </tr>
-		   <tr >
-		    <td></td>
-		    <td>[]</td>
-		    <td>GJ/jaar</td>
-		   </tr>
-		   <tr >
-		    <td></td>
-		    <td>[]</td>
-		    <td></td>
-		   </tr>
-		   <tr >
-		    <td></td>
-		    <td>[]</td>
-		    <td>GJ/jaar</td>
-		   </tr> 
+		    <tr>
+			<td>Type leiding</td>
+		 	<td>[type]</td>
+		 	<td></td>
+		    </tr>
+		    <tr>
+		 	<td>Naam</td>
+		 	<td>[naamgeving]</td>
+		 	<td></td>
+		    </tr>		
+		    <tr>
+		 	<td>Waterschap</td>
+			 <td>[waterschap]</td>
+		 	<td></td>
+		    </tr>
+		    <tr>
+		 	<td>RES-gebied</td>
+			 <td>[res_gebied]</td>
+			 <td></td>
+		    </tr>
+		    <tr>
+		 	<td><b>Gem. technisch potentieel (met WKO)</b></td>
+		 	<td>[gj_metwko]</td>
+		 	<td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+			 <td><b>Potentie gem. per jaar (zonder WKO)</b></td>
+			 <td>[gj_exwko]</td>
+			 <td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+			 <td>Potenie op te slaan in WKO</td>
+			 <td>[gj_zomer]</td>
+		 	<td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+		 	<td>Minimaal debiet</td>
+		 	<td>[min_uur]</td>
+			 <td>m3/uur</td>
+		    </tr>
+		    <tr>
+		 	<td>Minimaal technisch potentieel zonder WKO</td>
+		 	<td>[min_gj_ex]</td>
+		 	<td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+		 	<td>Gemiddeld debiet</td>
+		 	<td>[med_uur]</td>
+		 	<td>m3/uur</td>
+		    </tr>
+		    <tr>
+		 	<td>Opmerking</td>
+		 	<td>[var]</td>
+		 	<td></td>
+		<    /tr>
 	      </tbody>
             </table>
           </div>
