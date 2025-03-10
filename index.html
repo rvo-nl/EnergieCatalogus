@@ -3221,8 +3221,8 @@
         <div class="row">
           <div class="col">
             <!--img
-										src="http://geodata.nationaalgeoregister.nl/neainfolagenkadaster/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=potentiele_nodm_woningen_pandcontouren&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
-										style="float:left"-->
+		   src="https://service.pdok.nl/kadaster/nationale-energie-atlas/wfs/v1_0?&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=potentiele_nodm_woningen_pandcontouren&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+		   style="float:left"-->
             <div id="potentiele_nodm_woningen_pandcontourenMap" class="map" style="height:600px;width:500px">
               <script>
                 var potentiele_nodm_woningen_pandcontourenMap = L.map('potentiele_nodm_woningen_pandcontourenMap').setView([52.024, 5.244], 16);
@@ -3230,7 +3230,7 @@
                   attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                   maxZoom: 18
                 }).addTo(potentiele_nodm_woningen_pandcontourenMap);
-                L.tileLayer.wms('http://geodata.nationaalgeoregister.nl/neainfolagenkadaster/wms?', {
+                L.tileLayer.wms('https://service.pdok.nl/kadaster/nationale-energie-atlas/wms/v1_0?', {
                   format: 'image/png',
                   crs: L.CRS.EPSG4326,
                   opacity: 0.69,
