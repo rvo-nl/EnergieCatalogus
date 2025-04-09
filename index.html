@@ -4996,13 +4996,13 @@
             <!--img
 		src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEA_leidingen_zonder_wko&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
 			style="float:left"-->
-            <div id="TEA_efluentmap" style="height:600px;width:500px">
+            <div id="TEA_effuentmap" style="height:600px;width:500px">
               <script>
-                var TEA_effuentmap = L.map('TEA_efluentmap').setView([52.00, 5.30], 8);
+                var TEA_effuentmap = L.map('TEA_effuentmap').setView([52.00, 5.30], 8);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                   attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                   maxZoom: 18
-                }).addTo(TEA_efluentmap);
+                }).addTo(TEA_effuentmap);
                 L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
                   format: 'image/png',
                   crs: L.CRS.EPSG4326,
@@ -5010,7 +5010,7 @@
                   layers: 'TEA_leidingen_met_wko',
                   minZoom: 6, maxZoom: 18,
                   attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
-                }).addTo(TEA_efluentmap);
+                }).addTo(TEA_effuentmap);
               </script>
             </div>
 
