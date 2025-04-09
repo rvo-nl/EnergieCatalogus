@@ -4985,6 +4985,163 @@
     </div>
 
 	  
+   <div id="TEA_assets_leidingen" class="slide">     <!-- Aquathermie effluent leidingen .. -->
+
+      <div class="container">
+        <div class="row">
+          <h2>Potentieel Effluent-leidingen (met wko) TEA-potentie</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!--img
+		src="https://geodata.nationaalgeoregister.nl/reststromen/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEA_leidingen_zonder_wko&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+			style="float:left"-->
+            <div id="TEA_efluentmap" style="height:600px;width:500px">
+              <script>
+                var TEA_effuentmap = L.map('TEA_efluentmap').setView([52.00, 5.30], 8);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                  maxZoom: 18
+                }).addTo(TEA_efluentmap);
+                L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
+                  format: 'image/png',
+                  crs: L.CRS.EPSG4326,
+                  opacity: 0.69,
+                  layers: 'TEA_leidingen_met_wko',
+                  minZoom: 6, maxZoom: 18,
+                  attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+                }).addTo(TEA_efluentmap);
+              </script>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item"
+                  href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/53f1d1b9-a2d0-4aec-92e1-55647817d364?tab=general" target="_blank">metaData</a>
+                <a class="dropdown-item"
+                  href="https://rvo-nl.github.io/EnergieWiki/#AquathermieRWZI" target="_blank">beschrijving</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Download<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=GML3">GML3</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=GML2">GML2</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=application/json">geoJson</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=KML">KML</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=TEA_leidingen_met_wko&outputformat=CSV">WKT-CSV</a>
+                <!--a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=TEA_leidingen_met_wko&format=image/svg">SVG</a-->
+              </div>
+            </div>
+            <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+              data-target="#TEA_assets_leidingen_Attributen">Attributen</button>
+          </div>
+
+          <div class="col">
+            <p>  
+              <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
+              <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
+              <b>Laagnaam:    </b> TEA_leidingen_met_wko  /  TEA_leidingen_zonder_wko  /  TEA_leidingen_minimale_potentie<br>
+              <b>Bron:        </b> <a href="https://unievanwaterschappen.nl/" target="_blank">UvW</a> <br><br>
+                                   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                  style="background: transparent" />
+              </a> <br>
+            </p>
+            <p> <b>Legende:</b> <br>
+              <img
+                src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=TEA_leidingen_met_wko"
+                style="float:bottom" />
+            </p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table id="TEA_assets_leidingen_Attributen" class="collapse table table-striped table-hover table-sm"
+              style="width:100%">
+                 <thead>
+ 		   <tr>
+		     <th>Attribuut</th>
+		     <th>Waarde</th>
+ 		     <th>Eenheid</th>
+		  </tr>
+		 </thead>
+		  <tbody>
+		    <tr>
+			<td>Type leiding</td>
+		 	<td>[type]</td>
+		 	<td></td>
+		    </tr>
+		    <tr>
+		 	<td>Naam</td>
+		 	<td>[naamgeving]</td>
+		 	<td></td>
+		    </tr>		
+		    <tr>
+		 	 <td>Waterschap</td>
+			 <td>[waterschap]</td>
+		 	 <td></td>
+		    </tr>
+		    <tr>
+		 	 <td>RES-gebied</td>
+			 <td>[res_gebied]</td>
+			 <td></td>
+		    </tr>
+		    <tr>
+		 	<td><b>Gem. technisch potentieel (met WKO)</b></td>
+		 	<td>[gj_metwko]</td>
+		 	<td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+			 <td><b>Potentie gem. per jaar (zonder WKO)</b></td>
+			 <td>[gj_exwko]</td>
+			 <td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+			 <td>Potenie op te slaan in WKO</td>
+			 <td>[gj_zomer]</td>
+		 	 <td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+		 	<td>Minimaal debiet</td>
+		 	<td>[min_uur]</td>
+			 <td>m3/uur</td>
+		    </tr>
+		    <tr>
+		 	<td>Minimaal technisch potentieel zonder WKO</td>
+		 	<td>[min_gj_ex]</td>
+		 	<td>GJ/jaar</td>
+		    </tr>
+		    <tr>
+		 	<td>Gemiddeld debiet</td>
+		 	<td>[med_uur]</td>
+		 	<td>m3/uur</td>
+		    </tr>
+		    <tr>
+		 	<td>Opmerking</td>
+		 	<td>[var]</td>
+		 	<td></td>
+		    </tr>
+	      </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	  
    <div id="TED_potentieel_warmteonttrekking" class="slide">     <!-- TED potentieel .. -->
 
       <div class="container">
