@@ -2783,9 +2783,26 @@
                   crs: L.CRS.EPSG4326,
                   opacity: 0.69,
                   layers: 'WoonKernen',
+                  cql_filter: sql_text,		
                   minZoom: 6, maxZoom: 18,
                   attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
                 }).addTo(WoonKernenMap);
+
+                function set_sql_woonkern() {
+                  sql_text = document.getElementById('sql_input_buurt').value;
+                  console.log('WoonKernen: ' + sql_text);
+                  if (WoonKernen.hasLayer(WoonKernen)) { WoonKernen.removeLayer(WoonKernen); };
+                  load_layer_WoonKernen(sql_text);
+                };
+
+                function reset_sql_buurt() {
+                  sql_text = '1=1';
+                  document.getElementById('sql_input_buurt').value = sql_text;
+                  if (WoonKernen.hasLayer(WoonKernen)) {
+                    WoonKernen.removeLayer(WoonKernen);
+                  };
+                  load_layer_WoonKernen(sql_text);
+                }
               </script>
             </div>
 
@@ -2839,14 +2856,36 @@
                 src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=WoonKernen"
                 style="float:bottom">
             </p>
+            <p id="WoonKernenFilter"> <!-- <b>cql Filter:</b> <br> -->
+            <form name="cql_form" id="cql_form_buurt">
+              <label for="sql_input_WoonKernen">Bevolkingsdichtheid & Aantal inwoners Filter:</label>  <input class="form-control form-control-sm" type="text" id="sql_input_WoonKernen" value="BEV_DICHTH > 2000 AND AANT_INW > 10000" />
+              <input type="button" class="btn btn-outline-info" id="sql_submit_WoonKernen" value="update"
+                onclick="set_sql_WoonKernen()" />
+              <input type="reset" class="btn btn-outline-info" value="reset" onclick="reset_sql_WoonKernen()" />
+            </form>
+            </p>
           </div>
         </div>
+
         <div class="row">
           <div class="col-xs-12">
-            <table id="WoonKernenAttributen" class="collapse table table-striped table-hover table-sm">
-
-            </table>
-          </div>
+            <table id="WoonKernenAttributen" class="collapse table table-striped table-hover table-sm"> 
+              <thead>
+                <tr>
+                  <th>Attribuut</th>
+                  <th>Waarde</th>
+                  <th>Eenheid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>idem BuurtEnergieInfo Code</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+	    </table>  
+	  </div>
         </div>
       </div>
     </div>
@@ -2934,6 +2973,7 @@
                 style="float:bottom">
             </p>
           </div>
+		
         </div>
         <div class="row">
           <div class="col-xs-12">
