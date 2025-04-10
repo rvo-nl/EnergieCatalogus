@@ -8840,6 +8840,138 @@
     </div>
 
 
+    <div id="Proeftuinen" class="slide">
+        <div class="container">
+            <div class="row">
+                <h2> Proeftuin Aardgasvrije Wijken (monitor) </h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!--img
+                  src="https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=PAW_monitor_2024&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+                  style="float:left"-->
+                    <div id="PAWmap" class="map" style="height:600px;width:500px">
+                        <script>
+			sql_text = '1=1';
+			var PAWmap = L.map('PAWmap').setView([52.00, 5.30], 8);
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				maxZoom: 18
+			}).addTo(PAWmap);
+
+			load_layer_paw();
+		
+			function load_layer_paw() {
+				paw = L.tileLayer.wms('https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?', {
+				format: 'image/png',
+				crs: L.CRS.EPSG4326,
+				opacity: 0.69,
+				layers: 'PAW_monitor_2024',
+				cql_filter : sql_text,								
+				minZoom: 6, maxZoom: 18,
+				attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+				}).addTo(PAWmap);
+			};
+				
+			function set_sql_paw() {
+				sql_text = document.getElementById('sql_input_paw').value;
+				console.log('paw: ' + sql_text);
+				if (PAWmap.hasLayer(paw)) { PAWmap.removeLayer(paw);};
+				load_layer_paw(sql_text);
+			};
+		
+			function reset_sql_paw() {
+				sql_text = '1=1';
+				document.getElementById('sql_input_paw').value= sql_text;
+				if (PAWmap.hasLayer(paw)) {
+				PAWmap.removeLayer(paw);
+				};
+			load_layer_paw(sql_text);
+			}
+                        </script>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                                class="caret"></span></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item"
+                                href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/xx?tab=general"target="_blank">metaData</a>
+                            <a class="dropdown-item"
+                                href="https://rvo-nl.github.io/EnergieWiki/#ProeftuinAardgasvrijWijken" target="_blank">beschrijving</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle mr-1" type="button"
+                            data-toggle="dropdown">Download<span class="caret"></span></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=GML3">GML3</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=GML2">GML2</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=application/json">geoJson</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=KML">KML</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=PAW_monitor_2024&outputformat=CSV">WKT-CSV</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=PAW_monitor_2024&format=image/svg">SVG</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+                        data-target="#PAW_Attributen">Attributen</button>
+                </div>
+
+                <div class="col">
+                    <p><b>WMS-service:  </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
+                        <b>WFS-service: </b>https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
+                        <b>Laagnaam:    </b> PAW_monitor_2024<br>
+                        <b>Bron:        </b> <a href="www.RVO.nl" target="_blank">RVO</a>/<a href="www.NPLW.nl" target="_blank">NPLW</a> <br><br>
+										<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+										   <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+										   style="background: transparent" />
+										</a> <br />
+                    </p>
+                    <p><b>Legende:</b><br>
+                        <img src="https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=PAW_monitor_2024"
+                            style="float:bottom">
+                    </p>
+		<p  id="PAWFilter"> <b>cql Filter: techniek keuze 'collectief', 'individueel', 'beide'( </b> <br>
+			<form  name="cql_form" id="cql_form_PAW">
+				<!--label for="cql">CQL Filter</label-->
+				<input class="form-control form-control-sm" type="text" id="sql_input_paw" value="Tn_Ind_col in ('collectief', 'individueel', 'beide')"/>
+				<input  type="button" class="btn btn-outline-info" id="sql_submit_paw" value="update" onclick="set_sql_paw()"/>
+				<input  type="reset" class="btn btn-outline-info" value="reset" onclick="reset_sql_paw()"/>
+			</form>
+		</p>		    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="PAW_Attributen" class="collapse table table-striped table-hover table-sm">
+                            <thead>
+                             <tr >
+                              <td>Attribuut</td>
+                              <td>Waarde</td>
+                              <td>Eenheid</td>
+                             </tr>
+                             </thead>
+                             <tbody>
+                             <tr >
+                              <td></td>
+                              <td>[under construction]</td>
+                              <td></td>
+                             </tr>
+                             </tbody>
+                            </table>
+                </div>
+            </div>
+        </div>
+    </div>
+	  
 
     <script>
       $(window).load(function () {
@@ -8848,9 +8980,6 @@
         document.getElementById("loadingslide").style.visibility = "hidden";
       });
     </script>
-
-
-    <!-- <div id="Installaties" class="slide">  --> <!-- Later toevoegen als LGR-service weer werkt!  -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
