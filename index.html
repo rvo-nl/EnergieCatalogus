@@ -6747,6 +6747,171 @@
       </div>
     </div>
 
+	  
+    <div id="LT-MT_WarmteBronnen 2025" class="slide">
+      <div class="container">
+        <div class="row">
+          <h2> LT-MT WarmteBronnen StartAnalyse </h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!--img
+                  src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=LT_MT_WarmteBronnen&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+                  style="float:left"-->
+            <div id="LT_MT_WarmteBronnenmap" class="map" style="height:600px;width:500px">
+              <script>
+                var LT_MT_WarmteBronnenmap = L.map('LT_MT_WarmteBronnenmap').setView([52.00, 5.30], 8);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                  maxZoom: 18
+                }).addTo(LT_MT_WarmteBronnenmap);
+
+                load_layer_LT_MT_WarmteBronnen();
+
+                function load_layer_LT_MT_WarmteBronnen() {
+                  LT_MT_WarmteBronnen = L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
+                    format: 'image/png',
+                    crs: L.CRS.EPSG4326,
+                    opacity: 0.69,
+                    layers: 'LT_MT_WarmteBronnen',
+                    cql_filter: sql_text,
+                    minZoom: 6, maxZoom: 18,
+                    attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+                  }).addTo(LT_MT_WarmteBronnenmap);
+                };
+
+                function set_sql_LT_MT_WarmteBronnen() {
+                  sql_text = document.getElementById('sql_input_LT_MT_WarmteBronnen').value;
+                  console.log('LT_MT_WarmteBronnen: ' + sql_text);
+                  if (LT_MT_WarmteBronnenmap.hasLayer(LT_MT_WarmteBronnen)) { LT_MT_WarmteBronnenmap.removeLayer(LT_MT_WarmteBronnen); };
+                  load_layer_LT_MT_WarmteBronnen(sql_text);
+                };
+
+                function reset_sql_LT_MT_WarmteBronnen() {
+                  sql_text = '1=1';
+                  document.getElementById('sql_input_LT_MT_WarmteBronnen').value = sql_text;
+                  if (LT_MT_WarmteBronnenmap.hasLayer(LT_MT_WarmteBronnen)) {
+                    LT_MT_WarmteBronnenmap.removeLayer(LT_MT_WarmteBronnen);
+                  };
+
+                  load_layer_LT_MT_WarmteBronnen(sql_text);
+                }
+              </script>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item"
+                  href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/418d6ddc-806a-4d5f-835e-3d430a7a84ee?tab=general" target="_blank">metaData</a>
+                <a class="dropdown-item"
+                  href="https://rvo-nl.github.io/EnergieWiki/#LT-MT_WarmteBronnen" target="_blank">beschrijving</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Download<span
+                  class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=GML3">GML3</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=GML2">GML2</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=application/json">geoJson</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=KML">KML</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=LT_MT_WarmteBronnen&outputformat=CSV">WKT-CSV</a>
+                <a class="dropdown-item"
+                  href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=LT_MT_WarmteBronnen&format=image/svg">SVG</a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+              data-target="#LT_MT_WarmteBronnen_Attributen">Attributen</button>
+          </div>
+
+          <div class="col">
+            <p>  
+              <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
+              <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
+              <b>Laagnaam:    </b> LT_MT_WarmteBronnen<br>
+              <b>Bron:        </b><a href="https://www.RVO.nl" target="_blank">RVO</a>/<a href="https://www.pbl.nl" target="_blank">PBL</a>  <br>
+              <b>Actualiteit  </b> 2025 <br><br><br>
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+                  style="background: transparent" />
+              </a> <br />
+            </p>
+            <p><b>Legende:</b><br>
+              <img
+                src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=LT_MT_WarmteBronnen"
+                style="float:bottom">
+            </p>
+            <p id="LT_MT_WarmteBronnenFilter"> <!-- <b>cql Filter:</b> <br> -->
+            <form name="cql_form" id="cql_form_LT_MT_WarmteBronnen">
+              <!--label for="cql">CQL Filter</label-->
+              <label for="sql_input_LT_MT_WarmteBronnen">MWth Filter:</label>
+              <input class="form-control form-control-sm" type="text" id="sql_input_LT_MT_WarmteBronnen"
+                value="MWth > 10" />
+              <input type="button" class="btn btn-outline-info" id="sql_submit_LT_MT_WarmteBronnen" value="update"
+                onclick="set_sql_LT_MT_WarmteBronnen()" />
+              <input type="reset" class="btn btn-outline-info" value="reset"
+                onclick="reset_sql_LT_MT_WarmteBronnen()" />
+            </form>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table id="LT_MT_WarmteBronnen_Attributen" class="collapse table table-striped table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>Attribuut</th>
+                  <td>Waarde</td>
+                  <th>Eenheid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>TypeBron</td>
+                  <td>[TypeBron]</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Vermogen van de Bron</td>
+                  <td>[MWth]</td>
+                  <td>MWth</td>
+                </tr>
+                <tr>
+                  <td>-- input Vesta MAIS 2024 --</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Vermogen van de Bron (PBL)</td>
+                  <td>[MWth_max]</td>
+                  <td>MWth</td>
+                </tr>
+                <tr>
+                  <td>Bron Temperatuur (PBL)</td>
+                  <td>[T_Bron]</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <td>[status]</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  
 
 <div id="AquathermieRWZI" class="slide">
   <div class="container">
