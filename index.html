@@ -3459,6 +3459,17 @@
             src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=WarmteNetten"
             style="float:bottom">
         </p>
+            <p id="WarmteNettenFilter"> <!-- <b>cql Filter:</b> <br> -->
+            <form name="cql_form" id="cql_form_WarmteNetten">
+              <label for="sql_input_WarmteNetten">JAAR Filter:</label>
+              <input class="form-control form-control-sm" type="text" id="sql_input_WarmteNetten"
+                value="JAAR = 2023" />
+              <input type="button" class="btn btn-outline-info" id="sql_submit_WarmteNetten" value="update"
+                onclick="set_sql_WarmteNetten()" />
+              <input type="reset" class="btn btn-outline-info" value="reset"
+                onclick="reset_sql_WarmteNetten()" />
+            </form>
+            </p>  
       </div>
     </div>
     <div class="row">
