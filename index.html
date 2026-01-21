@@ -3397,53 +3397,36 @@
               attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
               maxZoom: 18
             }).addTo(WarmteNettenMap);
-			  
-            L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
-              format: 'image/png',
-              crs: L.CRS.EPSG4326,
-              opacity: 0.69,
-              layers: 'WarmteNetten',
-              minZoom: 6, maxZoom: 18,
-              attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
-            }).addTo(WarmteNettenMap);
-         
-                load_layer_WarmteNetten();
+       
+           load_layer_WarmteNetten();
 
-                function load_layer_IBISbedrijventerreinen() {
-                  WarmteNetten = L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
-                    format: 'image/png',
-                    crs: L.CRS.EPSG4326,
-                    opacity: 0.69,
-                    layers: 'WarmteNetten',
-                    cql_filter: sql_text,
-                    minZoom: 6, maxZoom: 18,
-                    attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
-                  }).addTo(WarmteNettenMap);
-                };
+           function load_layer_IBISbedrijventerreinen() {
+             WarmteNetten = L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
+               format: 'image/png',
+               crs: L.CRS.EPSG4326,
+               opacity: 0.69,
+               layers: 'WarmteNetten',
+               cql_filter: sql_text,
+               minZoom: 6, maxZoom: 18,
+               attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+             }).addTo(WarmteNettenMap);
+           };
 
-                function set_sql_IBISbedrijventerreinen() {
-                  sql_text = document.getElementById('sql_input_WarmteNetten').value;
-                  console.log('WarmteNetten: ' + sql_text);
-                  if (WarmteNettenMap.hasLayer(WarmteNetten)) { WarmteNettenMap.removeLayer(WarmteNetten); };
-                  load_layer_WarmteNetten(sql_text);
-                };
+           function set_sql_IBISbedrijventerreinen() {
+             sql_text = document.getElementById('sql_input_WarmteNetten').value;
+             console.log('WarmteNetten: ' + sql_text);
+             if (WarmteNettenMap.hasLayer(WarmteNetten)) { WarmteNettenMap.removeLayer(WarmteNetten); };
+             load_layer_WarmteNetten(sql_text);
+           };
 
-                function reset_sql_IBISbedrijventerreinen() {
-                  sql_text = '1=1';
-                  document.getElementById('sql_input_WarmteNetten').value = sql_text;
-                  if (WarmteNettenMap.hasLayer(WarmteNetten)) {
-                    WarmteNettenMap.removeLayer(WarmteNetten);
-                  };
-
-                  load_layer_WarmteNetten(sql_text);
-                }
+           function reset_sql_IBISbedrijventerreinen() {
+             sql_text = '1=1';
+             document.getElementById('sql_input_WarmteNetten').value = sql_text;
+             if (WarmteNettenMap.hasLayer(WarmteNetten)) {WarmteNettenMap.removeLayer(WarmteNetten); };
+           load_layer_WarmteNetten(sql_text);
+           }
           </script>
         </div>
-
-
-
-
-
 		  
         <div class="dropdown">
           <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
