@@ -3414,7 +3414,7 @@
 
            function set_sql_WarmteNetten() {
              sql_text = document.getElementById('sql_input_WarmteNetten').value;
-             console.log('WarmteNetten: ' + sql_text);
+             console.log('WarmteNetten_reeks: ' + sql_text);
              if (WarmteNettenMap.hasLayer(WarmteNetten_reeks)) { WarmteNettenMap.removeLayer(WarmteNetten_reeks); };
              load_layer_WarmteNetten(sql_text);
            };
