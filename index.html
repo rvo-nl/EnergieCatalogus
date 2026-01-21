@@ -3405,7 +3405,7 @@
                format: 'image/png',
                crs: L.CRS.EPSG4326,
                opacity: 0.69,
-               layers: 'WarmteNetten',
+               layers: 'WarmteNetten_reeks',
                cql_filter: sql_text,
                minZoom: 6, maxZoom: 18,
                attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
@@ -3415,14 +3415,14 @@
            function set_sql_WarmteNetten() {
              sql_text = document.getElementById('sql_input_WarmteNetten').value;
              console.log('WarmteNetten: ' + sql_text);
-             if (WarmteNettenMap.hasLayer(WarmteNetten)) { WarmteNettenMap.removeLayer(WarmteNetten); };
+             if (WarmteNettenMap.hasLayer(WarmteNetten_reeks)) { WarmteNettenMap.removeLayer(WarmteNetten_reeks); };
              load_layer_WarmteNetten(sql_text);
            };
 
            function reset_sql_WarmteNetten() {
              sql_text = '1=1';
              document.getElementById('sql_input_WarmteNetten').value = sql_text;
-             if (WarmteNettenMap.hasLayer(WarmteNetten)) {WarmteNettenMap.removeLayer(WarmteNetten); };
+             if (WarmteNettenMap.hasLayer(WarmteNetten_reeks)) {WarmteNettenMap.removeLayer(WarmteNetten_reeks); };
            load_layer_WarmteNetten(sql_text);
            }
           </script>
@@ -3442,19 +3442,19 @@
               class="caret"></span></button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=GML3">GML3</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=GML3">GML3</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=GML2">GML2</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=GML2">GML2</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=SHAPE-ZIP">SHP-ZIP</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=application/json">geoJson</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=application/json">geoJson</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=KML">KML</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=KML">KML</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten&outputformat=CSV">WKT-CSV</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmteNetten_reeks&outputformat=CSV">WKT-CSV</a>
             <a class="dropdown-item"
-              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=WarmteNetten&format=image/svg">SVG</a>
+              href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=WarmteNetten_reeks&format=image/svg">SVG</a>
           </div>
         </div>
         <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
@@ -3466,7 +3466,7 @@
         <p>  
           <b>WMS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
           <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
-          <b>Laagnaam:    </b> WarmteNetten<br>
+          <b>Laagnaam:    </b> WarmteNetten_reeks<br>
           <b>Bron:        </b><a href="https://www.CBS.nl" target="_blank"> CBS</a>/<a href="https://www.RVO.nl" target="_blank">RVO</a> <br><br>
           <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
             <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
@@ -3476,7 +3476,7 @@
         <p>
           <b>Legende:</b> <br>
           <img
-            src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=WarmteNetten"
+            src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=WarmteNetten_reeks"
             style="float:bottom">
         </p>
             <p id="WarmteNettenFilter"> <!-- <b>cql Filter:</b> <br> -->
