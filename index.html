@@ -3400,7 +3400,7 @@
        
            load_layer_WarmteNetten();
 
-           function load_layer_IBISbedrijventerreinen() {
+           function load_layer_WarmteNetten() {
              WarmteNetten = L.tileLayer.wms('https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?', {
                format: 'image/png',
                crs: L.CRS.EPSG4326,
@@ -3412,14 +3412,14 @@
              }).addTo(WarmteNettenMap);
            };
 
-           function set_sql_IBISbedrijventerreinen() {
+           function set_sql_WarmteNetten() {
              sql_text = document.getElementById('sql_input_WarmteNetten').value;
              console.log('WarmteNetten: ' + sql_text);
              if (WarmteNettenMap.hasLayer(WarmteNetten)) { WarmteNettenMap.removeLayer(WarmteNetten); };
              load_layer_WarmteNetten(sql_text);
            };
 
-           function reset_sql_IBISbedrijventerreinen() {
+           function reset_sql_WarmteNetten() {
              sql_text = '1=1';
              document.getElementById('sql_input_WarmteNetten').value = sql_text;
              if (WarmteNettenMap.hasLayer(WarmteNetten)) {WarmteNettenMap.removeLayer(WarmteNetten); };
