@@ -3531,9 +3531,371 @@
     </div>
   </div>
 </div>
-    
+
+   <div id="WarmtenettenInOntwikkeling" class="slide">
+        <div class="container">
+            <div class="row">
+                <h2> Warmtenetten In Ontwikkeling (monitor) </h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!--img
+                  src="https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?SERVICE=WMS&&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:28992&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=PAW_monitor_2024&FORMAT=image/png&STYLES=&TRANSPARENT=TRUE"
+                  style="float:left"-->
+                    <div id="WarmtenettenInOntwikkeling_map" class="map" style="height:600px;width:500px">
+                        <script>
+			sql_text = '1=1';
+			var WarmtenettenInOntwikkeling_map = L.map('WarmtenettenInOntwikkeling_map').setView([52.00, 5.30], 8);
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				maxZoom: 18
+			}).addTo(WarmtenettenInOntwikkeling_map);
+
+			load_layer_wio();
 		
-		<div id="GasLeidingen Enexis2020_v2" class="slide">
+			function load_layer_wio() {
+				wio = L.tileLayer.wms('https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?', {
+				format: 'image/png',
+				crs: L.CRS.EPSG4326,
+				opacity: 0.69,
+				layers: 'WarmtenettenInOntwikkeling',
+				cql_filter : sql_text,								
+				minZoom: 6, maxZoom: 18,
+				attribution: 'Mapdata  <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> &copy; <a href="http://www.warmteatlas.nl">WarmteAtlas RVO</a>'
+				}).addTo(WarmtenettenInOntwikkeling_map);
+			};
+				
+			function set_sql_wio() {
+				sql_text = document.getElementById('sql_input_wio').value;
+				console.log('wio: ' + sql_text);
+				if (WarmtenettenInOntwikkeling_map.hasLayer(wio)) { WarmtenettenInOntwikkeling_map.removeLayer(wio);};
+				load_layer_wio(sql_text);
+			};
+		
+			function reset_sql_wio() {
+				sql_text = '1=1';
+				document.getElementById('sql_input_wio').value= sql_text;
+				if (WarmtenettenInOntwikkeling_map.hasLayer(wio)) {
+				WarmtenettenInOntwikkeling_map.removeLayer(wio);
+				};
+			load_layer_wio(sql_text);
+			}
+                        </script>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle mr-1" type="button" data-toggle="dropdown">Info<span
+                                class="caret"></span></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item"
+                                href="https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/443f1afd-087c-4031-87d0-4e72a0dd1b65?tab=general"target="_blank">metaData</a>
+                            <a class="dropdown-item"
+                                href="https://rvo-nl.github.io/EnergieWiki/#WarmtenettenInOntwikkeling" target="_blank">beschrijving</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle mr-1" type="button"
+                            data-toggle="dropdown">Download<span class="caret"></span></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=GML3">GML3</a>
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=GML2">GML2</a>
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=SHAPE-ZIP">SHP-ZIP</a>
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=application/json">geoJson</a>
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=KML">KML</a>
+                            <a class="dropdown-item"
+                                href="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs?request=getFeature&typeName=WarmtenettenInOntwikkeling&outputformat=CSV">WKT-CSV</a>
+                            <a class="dropdown-item"
+                                href="https://rvo.b3p.nl/geoserver/WarmteAtlas/wms?request=GetMap&BBOX=0,300000,280000,620000&WIDTH=500&HEIGHT=600&LAYERS=WarmtenettenInOntwikkeling&format=image/svg">SVG</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info mr-1" data-toggle="collapse"
+                        data-target="#WarmtenettenInOntwikkeling_Attributen">Attributen</button>
+                </div>
+
+                <div class="col">
+                    <p> <b>WMS-service:  </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms? <br>
+                        <b>WFS-service: </b> https://www.warmteatlas.nl/geoserver/WarmteAtlas/wfs? <br>
+                        <b>Laagnaam:    </b> WarmtenettenInOntwikkeling<br>
+                        <b>Bron:        </b> <a href="www.RVO.nl" target="_blank">RVO</a>/<a href="www.NPLW.nl" target="_blank">NPLW</a> <br><br>
+										<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+										   <img alt="CC BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
+										   style="background: transparent" />
+										</a> <br />
+                    </p>
+                    <p><b>Legende:</b><br>
+                        <img src="https://www.warmteatlas.nl/geoserver/WarmteAtlas/wms?service=WMS&version=1.1.1&request=GetLegendGraphic&format=image/png&layer=WarmtenettenInOntwikkeling"
+                             style="float:bottom">
+                    </p>
+                    <p>  <b>cql Filter: Status planfase ('ontwikkelfase','planuitwerkingsfase','uitvoeringsfase','realisatie onzeker') </b> <br>
+                        <form  name="cql_form" id="cql_form_WIO">
+                            <input class="form-control form-control-sm" type="text" id="sql_input_wio" value="V_planfase in ('ontwikkelfase','planuitwerkingsfase','uitvoeringsfase','realisatie onzeker')"/>
+                            <input  type="button" class="btn btn-outline-info" id="sql_submit_wio" value="update" onclick="set_sql_wio()"/>
+                            <input  type="reset" class="btn btn-outline-info" value="reset" onclick="reset_sql_wio()"/>
+                        </form>
+                    </p>		    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+
+                   <table id="WarmtenettenInOntwikkeling_Attributen" class="collapse table table-striped table-hover table-sm">
+						<thead>
+						  <tr>
+						    <th>Attribuut</th>
+						    <th>Waarde</th>
+                            <th>Eenheid</th>
+						  </tr>
+						</thead>
+						<tbody> 
+                          <tr>
+                            <td>WiO_ID</td>
+                            <td>[WIO_ID]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Referentie</td>
+                            <td>[Referentie]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Projectnaam</td>
+                            <td>[Projectnaam]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Gemeente</td>
+                            <td>[Gemeente]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Warmteregio/ RES regio</td>
+                            <td>[RES_regio]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Wijk/dorp</td>
+                            <td>[wijkdorp]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Aantal woningen</td>
+                            <td>[K_#_woning]</td>
+                            <td>aantal</td>
+                          </tr>
+                          <tr>
+                            <td>Aantal utiliteits-gebouwen</td>
+                            <td>[K_#_utilit]</td>
+                            <td>aantal</td>
+                          </tr>
+                          <tr>
+                            <td>Nieuwbouw</td>
+                            <td>[K_#_nbouw]</td>
+                            <td>aantal</td>
+                          </tr>
+                          <tr>
+                            <td>Bewonersinitiatief (ja/nee)</td>
+                            <td>[K_Bew_init]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>techniek onbekend </td>
+                            <td>[Tn_onbekend]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>HT-net met HT-bron</td>
+                            <td>[Tn_HT_HT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>MT-net met MT-bron</td>
+                            <td>[Tn_MT_MT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>MT-net met LT-bron</td>
+                            <td>[Tn_MT_LT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>MT-net met ZLT-bron</td>
+                            <td>[Tn_MT_ZLT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>LT-net met LT-bron</td>
+                            <td>[Tn_LT_LT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>LT-net met ZLT-bron</td>
+                            <td>[Tn_LT_ZLT-b]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>ZLT-net/bronnet</td>
+                            <td>[Tn_ZLT]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>indiv. all-e warmtepomp</td>
+                            <td>[Tn_ind_all-e]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>groen gas (techniek)</td>
+                            <td>[Tn_groen_gas]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>waterstof (techniek)</td>
+                            <td>[Tn_waterst]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>hybride warmtepomp</td>
+                            <td>[Tn_hybride]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>systeem kan koelen</td>
+                            <td>[Tn_kan_koelen]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>Techniek beoogd </td>
+                            <td>[Tn_beoogd]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>bron onbekend</td>
+                            <td>[Br_onbekend]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>restwarmte industrie/datacenter</td>
+                            <td>[Br_restw_i]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>aftapwarmte AVI of STEG</td>
+                            <td>[Br_aftapw_]</td>
+                            <td>binair</td>
+                          </tr>
+                         <tr>
+                            <td>biomassa</td>
+                            <td>[Br_biomassa]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>geothermie (MT)</td>
+                            <td>[Br_geothermie]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>bodemlussen (+elektriciteit)</td>
+                            <td>[Br_bodemlussen]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>zonthermie MT</td>
+                            <td>[Br_zon_MT]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>zonthermie (Z)LT + WP</td>
+                            <td>[Br_zon_ZLT]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>TEO (+elektriciteit)</td>
+                            <td>[Br_TEO_e]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>TEA (+elektriciteit)</td>
+                            <td>[Br_TEA_e]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>TED</td>
+                            <td>[Br_TED]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>lucht</td>
+                            <td>[Br_lucht]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>uitwisseling / koeling</td>
+                            <td>[Br_lucht]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>groen gas (bron)</td>
+                            <td>[Br_groen_gas]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>waterstof (bron)</td>
+                            <td>[Br_waterstof]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>WKO (bron)</td>
+                            <td>[Br_WKO]</td>
+                            <td>binair</td>
+                          </tr>
+                          <tr>
+                            <td>Bron beoogd</td>
+                            <td>[Br_beoogd]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Datum status</td>
+                            <td>[Datum_stat]</td>
+                            <td>datum</td>
+                          </tr>
+                          <tr>
+                            <td>Status planfase 2025</td>
+                            <td>[V_planfase]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Initiatiefgroep (Bron: HIER 2024)</td>
+                            <td>[P_ini_grp]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Betrokken Leverancier / Warmtebedrijf</td>
+                            <td>[P_lev_bedr]</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Naar verwachting gereed</td>
+                            <td>[V_verw_gereed]</td>
+                            <td>jaartal</td>
+                          </tr>
+                          <tr>
+                            <td>Link</td>
+                            <td>[Lees_meer]</td>
+                            <td>url</td>
+                          </tr>
+                             </tbody>
+                            </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+	  <div id="GasLeidingen Enexis2020_v2" class="slide">
       <div class="container">
         <div class="row">
           <h2>Ligging te vervangen GasLeidingen Enexis (2020)</h2>
